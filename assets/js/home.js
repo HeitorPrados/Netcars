@@ -24,3 +24,50 @@ tipoVeiculoCarro.addEventListener('click', function() {
         tipoVeiculoMoto.classList.replace('veiculo-selecionado', 'veiculo-nao-selecionado');
     }
 });
+
+// Abrir modal veículos
+
+let itemNavVeiculos = document.getElementById('nav-veiculos');
+let modalNavVeiculos = document.getElementById('modal-nav-veiculos');
+
+itemNavVeiculos.addEventListener('click', function() {
+
+    let displayModal = window.getComputedStyle(modalNavVeiculos).display;
+
+    if (displayModal === 'none') {
+        modalNavVeiculos.style.display = 'flex';
+    }
+
+    if (displayModal === 'flex') {
+        modalNavVeiculos.style.display = 'none';
+    }
+});
+
+// Abrir e fechar modal login
+
+let closeModalLogin = document.getElementById('closeModalLogin');
+let modalLogin = document.getElementById('modal-login');
+
+closeModalLogin.addEventListener('click', function() {
+
+    let displayModal = window.getComputedStyle(modalLogin).display;
+
+    if (displayModal === 'flex') {
+        modalLogin.style.display = 'none';
+    }
+});
+
+let divEntrar = document.getElementById('divEntrar');
+
+divEntrar.addEventListener('click', function() {
+
+    let displayModal = window.getComputedStyle(modalLogin).display;
+
+    if (displayModal === 'flex') {
+        modalLogin.style.display = 'none';
+    }
+
+    if (displayModal === 'none') {
+        modalLogin.style.display = 'flex';
+    }
+});

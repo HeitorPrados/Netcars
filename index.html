@@ -17,22 +17,15 @@
         <nav>
             <ul>
                 <li><a href="">Home</a></li>
-                <li><a href="">Veículos</a></li>
-                <li><a href="">Contato</a></li>
+                <li id="nav-veiculos"><a>Veículos</a></li>
+                <li><a href="#footer">Contato</a></li>
             </ul>
         </nav>
-        <div class="div-user-cart">
-            <div class="div-cart">
-                <p>0</p>
-                <i class="fa-solid fa-cart-shopping"></i>
-            </div>
-            <div class="div-usuario">
-                <i class="fa-solid fa-circle-user"></i>
-                <p>Entrar</p>
-            </div>
+        <div class="div-usuario" id="divEntrar">
+            <i class="fa-solid fa-circle-user"></i>
+            <p>Entrar</p>
         </div>
     </header>
-
     <main>
         <section class="sec-pesquisar">
             <img src="assets/img/banner.png" alt="Banner" class="banner">
@@ -160,7 +153,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer id="footer">
         <div class="div-contato">
             <div>
                 <p class="footer-title">Cidades</p>
@@ -187,5 +180,25 @@
             <p>© 2025 <span class="net">NET<span class="cars">CARS</span></span> S.A. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+
+    <!-- Modais -->
+    <div id="modal-nav-veiculos">
+        <div>
+            <i class="fa-solid fa-car"></i>
+            <p>Comprar carros</p>
+        </div>
+        <div>
+            <i class="fa-solid fa-motorcycle"></i>
+            <p>Comprar motos</p>
+        </div>
+    </div>
+    <div id="modal-login">
+        <p class="title">Faça login para uma experiência
+            ainda melhor! ;D</p>
+        <p class="btn-login">Fazer login</p>
+        <p class="subtitle">Não tem uma conta? <span>Criar conta</span></p>
+        <p id="closeModalLogin">&times;</p>
+    </div>
 </body>
 </html>
