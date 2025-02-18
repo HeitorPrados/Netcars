@@ -13,6 +13,7 @@
 
 :root {
     --roxo: #6C1DE9;
+    --hover-roxo: #5a19c1;
     --cor-bg: #ECEDF2;
     --cor-texto: #262627;
     --cor-texto-apagado: #AEAEBA;
@@ -65,7 +66,7 @@ header {
     align-items: center;
     justify-content: center;
     gap: 5px;
-    padding-left: 50px;
+    padding: 0 0 0 50px;
     border-left: 1px solid rgba(0,0,0,0.15);
     & i {
         font-size: 1.8rem;
@@ -132,6 +133,7 @@ header {
         font-weight: 500;
     }
     & .btn-login {
+        cursor: pointer;
         background-color: var(--roxo);
         color: var(--cor-bg-sec);
         font-weight: 600;
@@ -141,6 +143,10 @@ header {
         font-size: 1.1rem;
         border-radius: 15px;
         padding: 20px;
+        transition: 0.1s;
+        &:hover {
+            background-color: var(--hover-roxo);
+        }
     }
     & #closeModalLogin {
         position: absolute;
@@ -270,6 +276,10 @@ main {
             text-transform: uppercase;
             color: var(--cor-bg-sec);
             font-weight: 500;
+            transition: 0.1s;
+            &:hover {
+                background-color: var(--hover-roxo);
+            }
         }
         & i {
             position: absolute;
@@ -438,7 +448,7 @@ footer {
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            gap: 15px;
+            gap: 5px;
             & .footer-title {
                 color: var(--cor-bg-sec);
                 font-weight: 600;
@@ -448,6 +458,11 @@ footer {
                 font-weight: 300;
                 font-size: 0.85rem;
                 cursor: pointer;
+                transition: 0.1s;
+                padding: 10px 0;
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
     }
