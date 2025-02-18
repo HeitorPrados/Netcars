@@ -461,6 +461,7 @@ footer {
         display: flex;
         align-items: center;
         justify-content: center;
+        text-align: center;
         & p {
             color: var(--cor-bg-sec);
             font-size: 0.85rem;

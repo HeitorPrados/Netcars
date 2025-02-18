@@ -18,10 +18,15 @@
     --cor-bg-sec: #FFFFFF;
 }
 
+body {
+    background-color: var(--cor-bg);
+}
 
 /* Header */
 header {
+    z-index: 999;
     position: fixed;
+    top: 0;
     width: 100%;
     background-color: var(--cor-bg-sec);
     display: flex;
@@ -30,11 +35,16 @@ header {
     align-items: center;
     justify-content: space-between;
     & nav {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         & ul {
             display: flex;
             gap: 70px;
             list-style-type: disc;
             & li, a {
+                cursor: pointer;
                 color: var(--cor-texto);
                 transition: 0.1s;
                 &:hover {
@@ -45,48 +55,22 @@ header {
     }
 }
 
-.div-user-cart {
+.div-usuario {
+    cursor: pointer;
     display: flex;
-    & .div-usuario {
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
-        padding-left: 50px;
-        border-left: 1px solid rgba(0,0,0,0.15);
-        & i {
-            font-size: 1.8rem;
-            color: var(--cor-texto);
-        }
-        & p {
-            font-size: 1.2rem;
-            color: var(--cor-texto);
-            font-weight: 600;
-        }
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding-left: 50px;
+    border-left: 1px solid rgba(0,0,0,0.15);
+    & i {
+        font-size: 1.8rem;
+        color: var(--cor-texto);
     }
-    & .div-cart {
-        cursor: pointer;
-        display: flex;
-        position: relative;
-        align-items: center;
-        justify-content: center;
-        padding: 0 50px;
-        & i {
-            font-size: 1.6rem;
-            color: var(--cor-texto);
-        }
-        & p {
-            background-color: var(--roxo);
-            color: var(--cor-bg-sec);
-            position: absolute;
-            font-size: 0.7rem;
-            font-weight: 600;
-            padding: 1px 3px;
-            border-radius: 50px;
-            right: 36px;
-            bottom: -5px;
-        } 
+    & p {
+        font-size: 1.2rem;
+        color: var(--cor-texto);
+        font-weight: 600;
     }
 }
 
@@ -242,6 +226,7 @@ footer {
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin-top: 80px;
     & .div-contato {
         background-color: var(--roxo);
         padding: 40px 0;
@@ -280,6 +265,7 @@ footer {
         display: flex;
         align-items: center;
         justify-content: center;
+        text-align: center;
         & p {
             color: var(--cor-bg-sec);
             font-size: 0.85rem;
@@ -296,3 +282,49 @@ footer {
     }
 }
 /* Fim do Footer */
+
+/* Responsivo */
+
+@media (max-width: 890px) {
+    nav {
+        display: none;
+    }
+    .div-usuario {
+        border: none;
+        padding: 0;
+    }
+}
+
+@media (max-width: 648px) {
+    .div-contato {
+        flex-direction: column;
+        align-items: center !important;
+        justify-content: center;
+        gap: 50px !important;
+        & div {
+            align-items: center !important;
+        }
+    }
+}
+
+@media (max-width: 518px) {
+    .bloco-login {
+        scale: 0.9;
+    }
+}
+
+@media (max-width: 444px) {
+    .bloco-login {
+        scale: 0.75;
+    }
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 320px) {
+    .bloco-login {
+        scale: 0.65;
+    }
+}
