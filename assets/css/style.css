@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+:root {
+    --roxo: #6C1DE9;
+    --cor-bg: #ECEDF2;
+    --cor-texto: #262627;
+    --cor-texto-apagado: #AEAEBA;
+}
