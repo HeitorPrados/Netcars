@@ -16,12 +16,19 @@
     --cor-texto: #262627;
     --cor-texto-apagado: #AEAEBA;
     --cor-bg-sec: #FFFFFF;
+    --cor-titles: #696977;
+}
+
+body {
+    background-color: var(--cor-bg);
 }
 
 
 /* Header */
 header {
+    z-index: 999;
     position: fixed;
+    top: 0;
     width: 100%;
     background-color: var(--cor-bg-sec);
     display: flex;
@@ -30,6 +37,10 @@ header {
     align-items: center;
     justify-content: space-between;
     & nav {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         & ul {
             display: flex;
             gap: 70px;
@@ -110,6 +121,239 @@ header {
     }
 }
 
+/* Main */
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 65px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-bg);
+    gap: 70px;
+}
+
+.sec-pesquisar {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 180px;
+}
+
+.banner {
+    width: 100%;
+}
+
+.veiculo-selecionado {
+    border-bottom: 4px solid var(--roxo);
+    color: var(--cor-texto);
+    transition: 0.2s;
+}
+.veiculo-nao-selecionado {
+    border-bottom: 4px solid var(--cor-bg-sec);
+    color: var(--cor-texto-apagado);
+    transition: 0.2s;
+}
+
+#div-input-pesquisar-moto {
+    display: none;
+}
+
+.div-pesquisar-veiculos {
+    background-color: var(--cor-bg-sec);
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    gap: 35px;
+    position: absolute;
+    bottom: -170px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    & .div-comprar {
+        display: flex;
+        gap: 20px;
+        & p {
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            padding-bottom: 10px;
+        }
+    }
+    & .div-input-pesquisar {
+        display: flex;
+        position: relative;
+        gap: 15px;
+        & input {
+            height: 60px;
+            width: 500px;
+            border: 2px solid var(--cor-texto-apagado);
+            border-radius: 10px;
+            padding-left: 50px;
+        }
+        & p {
+            cursor: pointer;
+            height: 60px;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+            background-color: var(--roxo);
+            border-radius: 10px;
+            text-transform: uppercase;
+            color: var(--cor-bg-sec);
+            font-weight: 500;
+        }
+        & i {
+            position: absolute;
+            left: 17px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            color: var(--cor-texto-apagado);
+        }
+    }
+}
+
+h4 {
+    color: var(--cor-titles);
+    font-size: 1.2rem;
+}
+
+.sec-marcas {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+    & .div-carrossel-veiculos {
+        display: flex;
+        gap: 20px;
+        & div {
+            transition: 0.2s;
+            cursor: pointer;
+            background-color: var(--cor-bg-sec);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(108, 29, 233, 0.3);
+            & img {
+                width: 100px;
+                height: auto;
+            }
+            &:hover {
+                scale: 1.07;
+            }
+        }
+    }
+}
+
+.sec-categorias {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    & .div-categorias {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        & div {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        & div::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.25s ease-in-out;
+        }
+        
+        & div:hover::before {
+            transform: scale(1.1);
+        }
+        & div {
+            cursor: pointer;
+            width: 218px;
+            height: 280px;
+            border-radius: 10px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 20px;
+            position: relative;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            & .overlay {
+                position: absolute;
+                z-index: 1;
+                height: 100%;
+                width: 100%;
+                background: linear-gradient(to top, rgba(0,0,0,0.45), rgba(0,0,0,0));
+                left: 0;
+                top: 0;
+            }
+            & p {
+                font-size: 1.4rem;
+                color: var(--cor-bg-sec);
+                position: relative;
+                z-index: 2;
+            }
+        }
+    }
+}
+
+.eletricos {
+    background-image: url(../img/eletrico.svg);
+}
+.populares {
+    background-image: url(../img/bannerPopular.svg);
+}
+
+.picapes {
+    background-image: url(../img/bannerPicapes.svg);
+}
+.sedans {
+    background-image: url(../img/bannerSedans.svg);
+}
+.suvs {
+    background-image: url(../img/bannerSUVs.svg);
+}
+
+.esportivas {
+    background-image: url(../img/esportivas.png);
+}
+.populares-motos {
+    background-image: url(../img/populares-motos.png);
+}
+.trail {
+    background-image: url(../img/trail.png);
+}
+.big-trail {
+    background-image: url(../img/big-trail.png);
+}
+.supermoto {
+    background-image: url(../img/supermoto.png);
+}
+
+/* Fim do Main */
+
 /* Footer */
 footer {
     display: flex;
@@ -117,6 +361,7 @@ footer {
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin-top: 80px;
     & .div-contato {
         background-color: var(--roxo);
         padding: 40px 0;
