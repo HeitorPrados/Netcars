@@ -48,6 +48,7 @@ header {
 .div-user-cart {
     display: flex;
     & .div-usuario {
+        cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -138,6 +139,7 @@ footer {
                 color: var(--cor-bg-sec);
                 font-weight: 300;
                 font-size: 0.85rem;
+                cursor: pointer;
             }
         }
     }
