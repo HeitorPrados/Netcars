@@ -7,6 +7,7 @@
     text-decoration: none;
     font-family: "Poppins", serif;
     font-size: 16px;
+    box-sizing: border-box;
 }
 
 :root {
@@ -17,7 +18,11 @@
     --cor-bg-sec: #FFFFFF;
 }
 
+
+/* Header */
 header {
+    position: fixed;
+    width: 100%;
     background-color: var(--cor-bg-sec);
     display: flex;
     padding: 12px 50px;
@@ -84,6 +89,8 @@ header {
     }
 }
 
+/* Fim do Header */
+
 .div-logo {
     display: flex;
     gap: 5px;
@@ -101,3 +108,64 @@ header {
         color: var(--roxo);
     }
 }
+
+/* Footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    & .div-contato {
+        background-color: var(--roxo);
+        padding: 40px 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 100px;
+        width: inherit;
+        & div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 15px;
+            & .footer-title {
+                color: var(--cor-bg-sec);
+                font-weight: 600;
+            }
+            & .footer-text {
+                color: var(--cor-bg-sec);
+                font-weight: 300;
+                font-size: 0.85rem;
+            }
+        }
+    }
+    & .div-logo {
+        padding: 15px 0;
+        background-color: var(--cor-bg-sec);
+        width: inherit;
+    }
+    & .div-direitos-reservados {
+        padding: 10px 0;
+        width: inherit;
+        background-color: var(--cor-texto);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & p {
+            color: var(--cor-bg-sec);
+            font-size: 0.85rem;
+        }
+        & .net {
+            color: var(--roxo);
+            font-family: "Racing Sans One", serif;
+
+        }
+        & .cars {
+            color: var(--cor-bg-sec);
+            font-family: "Racing Sans One", serif;
+        }
+    }
+}
+/* Fim do Footer */
