@@ -30,17 +30,20 @@ tipoVeiculoCarro.addEventListener('click', function() {
 let itemNavVeiculos = document.getElementById('nav-veiculos');
 let modalNavVeiculos = document.getElementById('modal-nav-veiculos');
 
-itemNavVeiculos.addEventListener('click', function() {
+itemNavVeiculos.addEventListener('mouseenter', function() {
+    modalNavVeiculos.style.display = 'flex';
+});
 
-    let displayModal = window.getComputedStyle(modalNavVeiculos).display;
+modalNavVeiculos.addEventListener('mouseenter', function() {
+    modalNavVeiculos.style.display = 'flex';
+});
 
-    if (displayModal === 'none') {
-        modalNavVeiculos.style.display = 'flex';
-    }
+itemNavVeiculos.addEventListener('mouseleave', function() {
+    modalNavVeiculos.style.display = 'none';
+});
 
-    if (displayModal === 'flex') {
-        modalNavVeiculos.style.display = 'none';
-    }
+modalNavVeiculos.addEventListener('mouseleave', function() {
+    modalNavVeiculos.style.display = 'none';
 });
 
 // Abrir e fechar modal login

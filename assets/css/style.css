@@ -47,6 +47,7 @@ header {
             gap: 70px;
             list-style-type: disc;
             & li, a {
+                padding: 35px 0;
                 cursor: pointer;
                 color: var(--cor-texto);
                 transition: 0.1s;
@@ -89,7 +90,7 @@ header {
     align-items: center;
     justify-content: center;
     border-radius: 0 0 10px 10px;
-    padding-top: 20px;
+    padding-top: 15px;
     top: 50px;
     left: 50%;
     transform: translateX(-50%);
@@ -103,6 +104,7 @@ header {
         gap: 15px;
         cursor: pointer;
         transform: 0.1s;
+        border-radius: inherit;
         &:hover {
             background-color: var(--cor-bg);
         }
