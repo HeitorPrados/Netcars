@@ -28,7 +28,7 @@ body {
 
 /* Header */
 header {
-    z-index: 999;
+    z-index: 100;
     position: fixed;
     top: 0;
     width: 100%;
@@ -59,6 +59,7 @@ header {
         }
     }
 }
+
 
 .div-usuario {
     cursor: pointer;
@@ -96,7 +97,7 @@ header {
     left: 50%;
     transform: translateX(-50%);
     position: fixed;
-    z-index: 990;
+    z-index: 95;
     & div {
         display: flex;
         align-items: center;
@@ -114,7 +115,7 @@ header {
 
 #modal-login {
     position: fixed;
-    z-index: 1000;
+    z-index: 101;
     top: 75px;
     right: 10px;
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
@@ -207,10 +208,16 @@ main {
     flex-direction: column;
     position: relative;
     margin-bottom: 180px;
+    width: 100%;
 }
 
 .banner {
+    height: 40vh;
     width: 100%;
+    background: url('../img/banner.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .veiculo-selecionado {
@@ -303,7 +310,7 @@ h4 {
     gap: 20px;
     align-items: flex-start;
     justify-content: center;
-    & .div-carrossel-veiculos {
+    & .div-marcas {
         display: flex;
         gap: 20px;
         & div {
@@ -328,21 +335,17 @@ h4 {
     }
 }
 
-.sec-categorias {
+.sec-modelos {
     display: flex;
     gap: 20px;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-    & .div-categorias {
+    & .div-modelos {
         display: flex;
         gap: 20px;
         align-items: center;
         justify-content: center;
-        & div {
-            position: relative;
-            overflow: hidden;
-        }
         
         & div::before {
             content: "";
@@ -360,6 +363,7 @@ h4 {
         & div:hover::before {
             transform: scale(1.1);
         }
+
         & div {
             cursor: pointer;
             width: 218px;
@@ -370,6 +374,7 @@ h4 {
             justify-content: flex-start;
             padding: 20px;
             position: relative;
+            overflow: hidden;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -495,3 +500,295 @@ footer {
     }
 }
 /* Fim do Footer */
+
+/* Barra lateral */
+
+.barra-lateral {
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    z-index: 201;
+    top: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    background-color: var(--cor-bg-sec);
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    animation: abrirBarraLateral 1s;
+    & .div-usuario {
+        border: none;
+        padding: 0;
+    }
+    & #closeBarraLateral {
+        position: absolute;
+        cursor: pointer;
+        top: 2px;
+        right: 15px;
+        font-size: 2.3rem;
+    }
+    & nav {
+        & ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            list-style-type: disc;
+            gap: 25px;
+            & li, a {
+                padding: 15px 0;
+                cursor: pointer;
+                color: var(--cor-texto);
+                transition: 0.1s;
+                &:hover {
+                    color: var(--roxo);
+                }
+            }
+        }
+    }
+}
+
+.sanduiche {
+    display: none;
+    width: 34px;
+    flex-direction: column;
+    gap: 6px;
+    & .linha1, .linha2, .linha3 {
+        border-radius: 10px;
+        width: 100%;
+        height: 4px;
+        background-color: var(--cor-texto);
+    }
+}
+
+.overlay-bg {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.45);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 200;
+    display: none;
+    animation: aparecerOverlay 1s;
+}
+
+@keyframes abrirBarraLateral {
+    0% {
+        right: -100%;
+    }
+    100% {
+        right: 0;
+    }
+}
+
+@keyframes fecharBarraLateral {
+    0% {
+        right: 0;
+    }
+    100% {
+        right: -100%;
+    }
+}
+
+@keyframes aparecerOverlay {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes sumirOverlay {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+
+/* Fim da barra lateral */
+
+/* Responsivo */
+
+@media (max-width: 1240px) {
+    .div-pesquisar-veiculos {
+        padding: 35px;
+        gap: 25px;
+        bottom: -170px;
+        & .div-comprar {
+            gap: 20px;
+            & p {
+                font-size: 1rem;
+                padding-bottom: 5px;
+            }
+        }
+        & .div-input-pesquisar {
+            gap: 15px;
+            & input {
+                height: 60px;
+                width: 350px;
+                padding-left: 50px;
+                font-size: 0.9rem;
+            }
+            & p {
+                height: 60px;
+                padding: 0 20px;
+                width: 240px;
+                font-size: 0.85rem;
+            }
+            & span {
+                font-size: 0.85rem;
+            }
+            & i {
+                left: 22px;
+                font-size: 0.9rem;
+            }
+        }
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    main {
+        width: 90vw;
+    }
+    .sec-pesquisar {
+        width: 100vw;
+    }
+    .sec-marcas {
+        position: relative;
+        left: -20px;
+        width: 100%;
+        & h4 {
+            padding-left: 20px;
+        }
+        .div-carrossel {
+            width: calc(100% + 20px);
+            overflow: auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        & .div-marcas {
+            padding: 15px;
+            width: fit-content;
+        }
+    }
+    .sec-modelos {
+        width: 100%;
+        .div-carrossel {
+            width: 100%;
+            overflow: auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        & .div-modelos {
+            width: fit-content;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        & nav {
+            display: none;
+        }
+        & .div-usuario {
+            display: none;
+        }
+        & .sanduiche {
+            display: flex;
+        }
+    }
+    .sec-marcas {
+        & .div-marcas {
+            & div {
+                width: 110px;
+                height: 110px;
+                & img {
+                    width: 75px;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    .sec-modelos {
+        & .div-modelos {
+            & div {
+                width: 160px;
+                height: 202px;
+                & p {
+                    font-size: 1.15rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    * {
+        font-size: 14px;
+    }
+
+    header {
+        height: 64px;
+    }
+
+    .banner {
+        top: 0;
+        height: 15vh;
+    }
+
+    .div-pesquisar-veiculos {
+        padding: 25px;
+        gap: 20px;
+        bottom: -200px;
+        & .div-input-pesquisar {
+            gap: 15px;
+            flex-direction: column;
+            & input {
+                height: 50px;
+                width: 75vw;
+                padding-left: 35px;
+                font-size: 0.8rem;
+            }
+            & p {
+                height: 50px;
+                width: 75vw;
+                font-size: 0.8rem;
+            }
+            & span {
+                font-size: 0.8rem;
+            }
+            & i {
+                left: 15px;
+                font-size: 0.9rem;
+                top: 24%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    footer {
+        & .div-contato {
+            align-items: center;
+            gap: 50px;
+            flex-direction: column;
+            & div {
+                align-items: center;
+            }
+        }
+    }
+}
+
+/* Fim do responsivo */
+
+
