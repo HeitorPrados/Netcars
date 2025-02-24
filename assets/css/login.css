@@ -12,6 +12,7 @@
 
 :root {
     --roxo: #6C1DE9;
+    --hover-roxo: #5a19c1;
     --cor-bg: #ECEDF2;
     --cor-texto: #262627;
     --cor-texto-apagado: #AEAEBA;
@@ -36,27 +37,6 @@ header {
     justify-content: center;
 }
 
-.div-usuario {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    padding-left: 50px;
-    border-left: 1px solid rgba(0,0,0,0.15);
-    & i {
-        font-size: 1.8rem;
-        color: var(--cor-texto);
-    }
-    & p {
-        font-size: 1.2rem;
-        color: var(--cor-texto);
-        font-weight: 600;
-    }
-}
-
-/* Fim do Header */
-
 .div-logo {
     display: flex;
     gap: 5px;
@@ -75,6 +55,8 @@ header {
     }
 }
 
+/* Fim do Header */
+
 /* Main */
 
 .main {
@@ -87,81 +69,69 @@ header {
     gap: 20px;
 }
 
-.bloco-login {
+.container-login {
     background-color: var(--cor-bg-sec);
-    width: 450px;
-    height: 350px;
+    padding: 40px;
     border-radius: 20px;
-    box-shadow: 0px 13px 10px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 30px;
-}
-
-.div-title-x {
-    display: flex;
     position: relative;
+    margin-top: 75px;
 }
 
-.coolinput {
+.title {
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+}
+
+.div-input {
+    height: fit-content;
     display: flex;
     flex-direction: column;
-    position: static;
-    width: 385px;
-  }
-  
-  .coolinput label.text {
-    font-size: 0.60rem;
-    color: #9CA3AF;
-    font-weight: 600;
     position: relative;
-    top: 0.5rem;
-    margin: 0 0 0 7px;
-    padding: 0 3px;
-    background: #FFFFFF;
-    width: fit-content;
-  }
+    & label {
+        font-size: 0.85rem;
+        color: var(--cor-texto-apagado);
+        font-weight: 600;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 16px;
+        background: var(--cor-bg-sec);
+        width: fit-content;
+        transition: 0.3s;
+        z-index: 1;
+        padding: 0 4px;
+    }
+    & input {
+        width: 385px;
+        padding: 12px;
+        font-size: 0.9rem;
+        border: 2px #e0e1e4 solid;
+        border-radius: 8px;
+        outline: none;
+        transition: 0.3s;
+        background: transparent;
+        z-index: 2;
+        &:focus {
+            border: 2px var(--roxo) solid;
+        }
+    }
+    &:focus-within label {
+        color: var(--roxo);
+        top: 0;
+        font-size: 0.75rem;
+        z-index: 3;
+    }
+}
   
-  .coolinput input[type="text"].input {
-    padding: 10px 19px;
-    font-size: 0.75rem;
-    border: 2px #ECEDF2 solid;
-    border-radius: 5px;
-    background: #FFFFFF;
-  }
-  
-  .coolinput input[type="text"].input:focus {
-    outline: none;
-  }
-
-  .coolinput label.password {
-    font-size: 0.60rem;
-    color: #9CA3AF;
-    font-weight: 600;
-    position: relative;
-    top: 0.5rem;
-    margin: 0 0 0 7px;
-    padding: 0 3px;
-    background: #FFFFFF;
-    width: fit-content;
-  }
-  
-  .coolinput input[type="password"].input {
-    padding: 10px 19px;
-    font-size: 0.75rem;
-    border: 2px #ECEDF2 solid;
-    border-radius: 5px;
-    background: #FFFFFF;
-  }
-  
-  .coolinput input[type="password"].input:focus {
-    outline: none;
-  }
-  
-  .btn-criar-conta {
-    background-color: #6C1DE9;
+.btn-acao {
+    background-color: var(--roxo);
     color: var(--cor-bg-sec);
     border-radius: 10px;
     font-size: 15px;
@@ -169,34 +139,37 @@ header {
     border: none;
     width: 385px;
     height: 50px;
-  }
-
-  .title-bloco-login {
-    font-weight: 500;
-    font-size: 20px;
-    text-align: center;
-  }
-
-  .fechar a{
-    text-decoration: none;
-    color: var(--cor-texto);
-    font-size: 40px;
-    position: absolute;
-    left: 320px;
-    top: -30px;
+    transition: 0.1s;
     cursor: pointer;
-  }
+    &:hover {
+        background-color: var(--hover-roxo);
+    }
+}
 
-  .p-criar-conta {
-    font-size: 13px;
+.fechar {
+    color: var(--cor-texto);
+    font-size: 2.4rem;
+    position: absolute;
+    right: 14px;
+    top: 0px;
+    cursor: pointer;
+}
+
+.texto-pergunta {
+    font-size: 0.95rem;
     font-weight: 300;
-  }
+}
 
-  .link-criar-conta a{
-    color: #6C1DE9;
-    font-size: 13px;
+.link-redirect a{
+    color: var(--roxo);
+    font-size: 0.95rem;
     font-weight: 600;
-  }
+    cursor: pointer;
+    transition: 0.1s;
+    &:hover {
+        text-decoration: underline;
+    }
+}
 
 /* Fim do Main */
 

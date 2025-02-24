@@ -30,17 +30,20 @@ tipoVeiculoCarro.addEventListener('click', function() {
 let itemNavVeiculos = document.getElementById('nav-veiculos');
 let modalNavVeiculos = document.getElementById('modal-nav-veiculos');
 
-itemNavVeiculos.addEventListener('click', function() {
+itemNavVeiculos.addEventListener('mouseenter', function() {
+    modalNavVeiculos.style.display = 'flex';
+});
 
-    let displayModal = window.getComputedStyle(modalNavVeiculos).display;
+modalNavVeiculos.addEventListener('mouseenter', function() {
+    modalNavVeiculos.style.display = 'flex';
+});
 
-    if (displayModal === 'none') {
-        modalNavVeiculos.style.display = 'flex';
-    }
+itemNavVeiculos.addEventListener('mouseleave', function() {
+    modalNavVeiculos.style.display = 'none';
+});
 
-    if (displayModal === 'flex') {
-        modalNavVeiculos.style.display = 'none';
-    }
+modalNavVeiculos.addEventListener('mouseleave', function() {
+    modalNavVeiculos.style.display = 'none';
 });
 
 // Abrir e fechar modal login
@@ -71,3 +74,28 @@ divEntrar.addEventListener('click', function() {
         modalLogin.style.display = 'flex';
     }
 });
+
+// Abrir e fechar barra lateral
+
+const sanduiche = document.getElementById('sanduicheHeader');
+const barraLateral = document.getElementById('barra-lateral');
+const overlayBg = document.getElementById('overlay-bg');
+const closeBarraLateral = document.getElementById('fecharBarraLateral');
+
+sanduiche.addEventListener('click', function() {
+    barraLateral.style.animation = 'abrirBarraLateral 0.5s';
+    overlayBg.style.animation = 'aparecerOverlay 0.5s';
+
+    barraLateral.style.display = 'flex';
+    overlayBg.style.display = 'flex';
+
+})
+
+closeBarraLateral.addEventListener('click', function() {
+    barraLateral.style.animation = 'fecharBarraLateral 0.5s';
+    overlayBg.style.animation = 'sumirOverlay 0.5s';
+    setTimeout(() => {
+        barraLateral.style.display = 'none';
+        overlayBg.style.display = 'none';
+    }, 490)
+})
