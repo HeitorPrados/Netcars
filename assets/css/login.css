@@ -80,6 +80,7 @@ header {
     align-items: center;
     gap: 30px;
     position: relative;
+    margin-top: 75px;
 }
 
 .title {
