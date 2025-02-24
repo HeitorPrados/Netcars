@@ -69,5 +69,20 @@
             <p>© 2025 <span class="net">NET<span class="cars">CARS</span></span> S.A. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        document.querySelectorAll('.div-input').forEach(container => {
+            const input = container.querySelector('input');
+            const label = container.querySelector('label');
+
+            input.addEventListener('input', function() {
+                if (this.value.trim() !== "") {
+                    label.classList.add('active');
+                } else {
+                    label.classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

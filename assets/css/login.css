@@ -107,6 +107,12 @@ header {
         transition: 0.3s;
         z-index: 1;
         padding: 0 4px;
+        &.active {
+            color: var(--cor-texto-apagado);
+            top: 0;
+            font-size: 0.75rem;
+            z-index: 3;
+        }
     }
     & input {
         width: 385px;
