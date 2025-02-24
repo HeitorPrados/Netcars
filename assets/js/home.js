@@ -80,11 +80,11 @@ divEntrar.addEventListener('click', function() {
 const sanduiche = document.getElementById('sanduicheHeader');
 const barraLateral = document.getElementById('barra-lateral');
 const overlayBg = document.getElementById('overlay-bg');
-const closeBarraLateral = document.getElementById('closeBarraLateral');
+const closeBarraLateral = document.getElementById('fecharBarraLateral');
 
 sanduiche.addEventListener('click', function() {
-    barraLateral.style.animation = 'abrirBarraLateral 1s';
-    overlayBg.style.animation = 'aparecerOverlay 1s';
+    barraLateral.style.animation = 'abrirBarraLateral 0.5s';
+    overlayBg.style.animation = 'aparecerOverlay 0.5s';
 
     barraLateral.style.display = 'flex';
     overlayBg.style.display = 'flex';
@@ -92,10 +92,10 @@ sanduiche.addEventListener('click', function() {
 })
 
 closeBarraLateral.addEventListener('click', function() {
-    barraLateral.style.animation = 'fecharBarraLateral 1s';
-    overlayBg.style.animation = 'sumirOverlay 1s';
+    barraLateral.style.animation = 'fecharBarraLateral 0.5s';
+    overlayBg.style.animation = 'sumirOverlay 0.5s';
     setTimeout(() => {
         barraLateral.style.display = 'none';
         overlayBg.style.display = 'none';
-    }, 990)
+    }, 490)
 })

@@ -38,6 +38,40 @@ header {
     box-shadow: 0 0 10px rgba(0,0,0,0.25);
     align-items: center;
     justify-content: space-between;
+}
+
+/* Barra lateral */
+
+#barra-lateral {
+    display: flex;
+    background-color: var(--cor-bg-sec);
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    & .div-usuario {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        & i {
+            font-size: 1.8rem;
+            color: var(--cor-texto);
+        }
+        & p {
+            font-size: 1.2rem;
+            color: var(--cor-texto);
+            font-weight: 600;
+        }
+    }
+    & #fecharBarraLateral {
+        display: none;
+        position: absolute;
+        cursor: pointer;
+        top: 2px;
+        right: 15px;
+        font-size: 2.3rem;
+    }
     & nav {
         position: absolute;
         top: 50%;
@@ -60,25 +94,67 @@ header {
     }
 }
 
-
-.div-usuario {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.sanduiche {
+    display: none;
+    width: 30px;
+    flex-direction: column;
     gap: 5px;
-    padding: 0 0 0 50px;
-    border-left: 1px solid rgba(0,0,0,0.15);
-    & i {
-        font-size: 1.8rem;
-        color: var(--cor-texto);
-    }
-    & p {
-        font-size: 1.2rem;
-        color: var(--cor-texto);
-        font-weight: 600;
+    & .linha1, .linha2, .linha3 {
+        border-radius: 10px;
+        width: 100%;
+        height: 4px;
+        background-color: var(--cor-texto);
     }
 }
+
+.overlay-bg {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.45);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 200;
+    display: none;
+}
+
+@keyframes abrirBarraLateral {
+    0% {
+        right: -100%;
+    }
+    100% {
+        right: 0;
+    }
+}
+
+@keyframes fecharBarraLateral {
+    0% {
+        right: 0;
+    }
+    100% {
+        right: -100%;
+    }
+}
+
+@keyframes aparecerOverlay {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes sumirOverlay {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+
+/* Fim da barra lateral */
 
 /* Fim do Header */
 
@@ -188,6 +264,9 @@ header {
     }
     & span {
         color: var(--roxo);
+    }
+    &.hidden {
+        display: none;
     }
 }
 
@@ -501,117 +580,6 @@ footer {
 }
 /* Fim do Footer */
 
-/* Barra lateral */
-
-.barra-lateral {
-    width: 300px;
-    height: 100vh;
-    position: fixed;
-    z-index: 201;
-    top: 0;
-    right: 0;
-    display: none;
-    flex-direction: column;
-    background-color: var(--cor-bg-sec);
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    animation: abrirBarraLateral 1s;
-    & .div-usuario {
-        border: none;
-        padding: 0;
-    }
-    & #closeBarraLateral {
-        position: absolute;
-        cursor: pointer;
-        top: 2px;
-        right: 15px;
-        font-size: 2.3rem;
-    }
-    & nav {
-        & ul {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            list-style-type: disc;
-            gap: 25px;
-            & li, a {
-                padding: 15px 0;
-                cursor: pointer;
-                color: var(--cor-texto);
-                transition: 0.1s;
-                &:hover {
-                    color: var(--roxo);
-                }
-            }
-        }
-    }
-}
-
-.sanduiche {
-    display: none;
-    width: 34px;
-    flex-direction: column;
-    gap: 6px;
-    & .linha1, .linha2, .linha3 {
-        border-radius: 10px;
-        width: 100%;
-        height: 4px;
-        background-color: var(--cor-texto);
-    }
-}
-
-.overlay-bg {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0,0,0,0.45);
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 200;
-    display: none;
-    animation: aparecerOverlay 1s;
-}
-
-@keyframes abrirBarraLateral {
-    0% {
-        right: -100%;
-    }
-    100% {
-        right: 0;
-    }
-}
-
-@keyframes fecharBarraLateral {
-    0% {
-        right: 0;
-    }
-    100% {
-        right: -100%;
-    }
-}
-
-@keyframes aparecerOverlay {
-    0% {
-        opacity: 0%;
-    }
-    100% {
-        opacity: 100%;
-    }
-}
-
-@keyframes sumirOverlay {
-    0% {
-        opacity: 100%;
-    }
-    100% {
-        opacity: 0%;
-    }
-}
-
-/* Fim da barra lateral */
-
 /* Responsivo */
 
 @media (max-width: 1240px) {
@@ -697,16 +665,52 @@ footer {
 
 @media (max-width: 768px) {
     header {
-        & nav {
-            display: none;
-        }
-        & .div-usuario {
-            display: none;
-        }
         & .sanduiche {
             display: flex;
         }
     }
+
+    .div-logo.hidden {
+        display: flex;
+    }
+    #barra-lateral {
+        display: none;
+        position: fixed;
+        width: 230px;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        flex-direction: column-reverse;
+        z-index: 999;
+        justify-content: center;
+        gap: 40px;
+        & nav {
+            position: static;
+            top: 0;
+            left: 0;
+            transform: none;
+            & ul {
+                padding-left: 24px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+                & a {
+                    padding: 15px 0;
+                }
+                & li {
+                    padding: 0;
+                }
+            }
+        }
+        &  #fecharBarraLateral {
+            display: flex;
+        }
+        & .div-logo {
+            scale: 0.8;
+        }
+    }
+
     .sec-marcas {
         & .div-marcas {
             & div {
@@ -723,8 +727,8 @@ footer {
     .sec-modelos {
         & .div-modelos {
             & div {
-                width: 160px;
-                height: 202px;
+                width: 140px;
+                height: 177px;
                 & p {
                     font-size: 1.15rem;
                 }
@@ -740,6 +744,7 @@ footer {
 
     header {
         height: 64px;
+        padding: 12px 25px;
     }
 
     .banner {
