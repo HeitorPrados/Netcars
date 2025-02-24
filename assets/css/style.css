@@ -212,7 +212,7 @@ header {
 
 #modal-login {
     position: fixed;
-    z-index: 101;
+    z-index: 5;
     top: 75px;
     right: 10px;
     box-shadow: 0 0 20px rgba(0,0,0,0.15);

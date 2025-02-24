@@ -97,5 +97,5 @@ closeBarraLateral.addEventListener('click', function() {
     setTimeout(() => {
         barraLateral.style.display = 'none';
         overlayBg.style.display = 'none';
-    }, 490)
+    }, 499)
 })

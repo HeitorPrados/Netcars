@@ -200,7 +200,7 @@ footer {
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            gap: 15px;
+            gap: 5px;
             & .footer-title {
                 color: var(--cor-bg-sec);
                 font-weight: 600;
@@ -210,6 +210,11 @@ footer {
                 font-weight: 300;
                 font-size: 0.85rem;
                 cursor: pointer;
+                transition: 0.1s;
+                padding: 10px 0;
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
     }
@@ -243,45 +248,87 @@ footer {
 }
 /* Fim do Footer */
 
-/* Responsivo */
+/* Responsivo Header - Footer */
 
-@media (max-width: 890px) {
-    .div-usuario {
-        border: none;
-        padding: 0;
+@media (max-width: 768px) { 
+    .div-logo {
+        scale: 0.8;
     }
 }
 
-@media (max-width: 648px) {
-    .div-contato {
-        flex-direction: column;
-        align-items: center !important;
-        justify-content: center;
-        gap: 50px !important;
-        & div {
-            align-items: center !important;
+@media (max-width: 525px) {
+    * {
+        font-size: 14px;
+    }
+
+    header {
+        height: 64px;
+        padding: 12px 25px;
+    }
+
+    .container-login {
+        padding: 35px 25px;
+    }
+    .div-input {
+        & input {
+            width: 300px;
+        }
+    }
+    .btn-acao {
+        width: 300px;
+    }
+
+    footer {
+        & .div-contato {
+            align-items: center;
+            gap: 50px;
+            flex-direction: column;
+            & div {
+                align-items: center;
+            }
         }
     }
 }
 
-@media (max-width: 518px) {
-    .bloco-login {
-        scale: 0.9;
-    }
-}
 
-@media (max-width: 444px) {
-    .bloco-login {
-        scale: 0.75;
+@media (max-width: 400px) {
+    * {
+        font-size: 14px;
     }
-    header {
-        flex-direction: column;
-        gap: 20px;
+    .container-login {
+        padding: 30px 25px;
+        & h1 {
+            width: 45vw;
+            font-size: 17px;
+        }
+    }
+    .div-input {
+        & input {
+            width: 250px;
+        }
+    }
+    .btn-acao {
+        width: 250px;
     }
 }
 
 @media (max-width: 320px) {
-    .bloco-login {
-        scale: 0.65;
+    .container-login {
+        padding: 35px 25px;
+        & h1 {
+            width: 55vw;
+            font-size: 16px;
+        }
+    }
+    .div-input {
+        & input {
+            width: 230px;
+            padding: 9px;
+        }
+    }
+    .btn-acao {
+        width: 230px;
     }
 }
+
+/* Fim do responsivo */
