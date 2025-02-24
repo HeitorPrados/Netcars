@@ -86,7 +86,7 @@ main{
     display: flex;
     height: 87vh;
     & .container-perfil{
-        width: 245px;
+        width: 289px;
         height: 100vh;
         border-top: 1px solid rgba(0,0,0,0.15);
         background: var(--cor-bg-sec);
@@ -154,6 +154,10 @@ main{
             width: 700px;
             height: 550px;
             border-radius: 20px;
+            & h3{
+                font-size: 1.1rem;
+                font-weight: 400;
+            }
             & form{
                 padding-top: 20px;
                 display: flex;
