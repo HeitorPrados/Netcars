@@ -333,89 +333,127 @@ main {
 
 /* Fase 3 */
 
-.container-branco {
+.titulo3 {
+    color: #000;
+    font-family: Poppins;
+    font-size: 29px; /* Ajustado para 125% */
+    font-style: normal;
+    font-weight: 600;
+    line-height: 19px; /* Ajustado para 125% */
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .container-branco {
     display: flex;
     flex-direction: column;
     gap: 16px;
-}
-
-form {
+  }
+  
+  form {
     display: flex;
     flex-direction: column;
     gap: 16px;
-}
-
-.div-input {
+    width: 800px;
+    margin-bottom: 40px;
+  }
+  
+  .div-input {
     display: flex;
     flex-direction: column;
     position: relative;
-
-    & label {
-        font-size: 0.85rem;
-        color: var(--cor-texto-apagado);
-        font-weight: 600;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 16px;
-        background: var(--cor-bg-sec);
-        width: fit-content;
-        transition: 0.3s;
-        z-index: 1;
-        padding: 0 4px;
-        pointer-events: none;
-    }
-
-    & label.active,
-    &:focus-within label {
-        color: var(--roxo);
-        top: 0;
-        font-size: 0.75rem;
-        z-index: 3;
-    }
-
-    & select, 
-    & input {
-        width: 100%;
-        padding: 12px;
-        font-size: 0.9rem;
-        border: 2px #e0e1e4 solid;
-        border-radius: 8px;
-        outline: none;
-        transition: 0.3s;
-        background: transparent;
-        z-index: 2;
-        appearance: none;
-        cursor: pointer;
-    }
-
-    & select:focus, 
-    & input:focus {
-        border: 2px var(--roxo) solid;
-    }
-}
-
-.ano-container, .cor-renavam-container {
+  }
+  
+  /* Estilo do label (estado inicial) */
+  .div-input label {
+    font-size: 0.85rem;
+    color: var(--cor-texto-apagado);
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16px;
+    background: var(--cor-bg-sec);
+    width: fit-content;
+    transition: 0.3s;
+    z-index: 1;
+    padding: 0 4px;
+    pointer-events: none;
+  }
+  
+  /* Estado ativo (quando o input/select está focado ou possui valor) */
+  .div-input label.active,
+  .div-input:focus-within label {
+    color: var(--roxo);
+    top: 0;
+    font-size: 0.75rem;
+    z-index: 3;
+  }
+  
+  /* Estilo dos inputs e selects */
+  .div-input select,
+  .div-input input {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.9rem;
+    border: 2px #e0e1e4 solid;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+    background: transparent;
+    z-index: 2;
+    appearance: none;
+    cursor: pointer;
+  }
+  
+  .div-input select:focus,
+  .div-input input:focus {
+    border: 2px var(--roxo) solid;
+  }
+  
+  .container-2labels {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
     justify-content: space-between;
-
-    & .div-input {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        min-width: 200px;
-    }
-}
-
-#marca, #modelo, #versao {
-    width: 100%;
-    max-width: 600px;
-}
-
-
+  }
+  
+  .container-2labels .div-input {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+  }
+  
 /* Fim da fase 3 */
+
+/* Fase 5 */
+
+#upload-imagem {
+    display: none; /* Esconde o input padrão */
+}
+
+.upload-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px; /* Ajuste conforme necessário */
+    height: 150px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.upload-label img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+/* Fim da fase 4 */
 
 /* Fim do Main */
 
