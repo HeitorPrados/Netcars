@@ -1,0 +1,405 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap);
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Poppins", serif;
+    font-size: 16px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --roxo: #6C1DE9;
+    --hover-roxo: #5a19c1;
+    --cor-bg: #ECEDF2;
+    --cor-texto: #262627;
+    --cor-texto-apagado: #AEAEBA;
+    --cor-bg-sec: #FFFFFF;
+    --cor-titles: #696977;
+}
+
+body {
+    background-color: var(--cor-bg);
+}
+
+
+/* Header */
+header {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--cor-bg-sec);
+    display: flex;
+    padding: 12px 50px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    align-items: center;
+    justify-content: space-between;
+    & nav {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        & ul {
+            display: flex;
+            gap: 70px;
+            list-style-type: disc;
+            & li, a {
+                padding: 35px 0;
+                cursor: pointer;
+                color: var(--cor-texto);
+                transition: 0.1s;
+                &:hover {
+                    color: var(--roxo);
+                }
+            }
+        }
+    }
+}
+
+.div-usuario {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0 0 0 50px;
+    border-left: 1px solid rgba(0,0,0,0.15);
+    & i {
+        font-size: 1.8rem;
+        color: var(--cor-texto);
+    }
+    & p {
+        font-size: 1.2rem;
+        color: var(--cor-texto);
+        font-weight: 600;
+    }
+}
+
+/* Fim do Header */
+
+
+.div-logo {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    & img {
+        width: auto;
+        height: 25px;
+    }
+    & p, span {
+        font-size: 2rem;
+        font-family: "Racing Sans One", serif;
+    }
+    & span {
+        color: var(--roxo);
+    }
+}
+
+/* Main */
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-direction: column;
+    margin-top: 115px ;
+}
+
+.container-branco {
+    width: 1434px;
+    height: 573px;
+    border-radius: 12px;
+    border: 1px solid #D0CFDA;
+    background: #FFF;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative; /* Adicionado para permitir o posicionamento dos botões dentro */
+}
+
+.titulo {
+    color: #000;
+    font-family: Poppins;
+    font-size: 29px; /* Ajustado para 125% */
+    font-style: normal;
+    font-weight: 600;
+    line-height: 19px; /* Ajustado para 125% */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.placa {
+    width: 566px;
+    height: 244px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    border: 4px solid #EDECF2;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & input {
+        text-align: center;
+        position: relative;
+        bottom: -45px;
+        border: none;
+        outline: none;
+        background: transparent;
+        width: 250px;
+        height: 50px;
+        flex-shrink: 0;
+        color: #6b6b6b;
+        font-family: Poppins, sans-serif;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 18.8px;
+    }
+    & .linha {
+        width: 456px;
+        height: 3px;
+        flex-shrink: 0;
+        background: #D0CFDA;
+        position: relative;
+        bottom: -55px;
+    }    
+}
+
+.div-azul {
+    width: 561px;
+    height: 83px;
+    flex-shrink: 0;
+    border-radius: 16px 16px 0px 0px;
+    background: #363676;
+    position: relative;
+}
+
+.logo-brazil {
+    width: 37px;
+    height: 37px;
+    flex-shrink: 0;
+    background: url(../img/image20.svg) 50% / cover no-repeat;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    
+}
+
+.aviso {
+    width: 402px;
+    height: 81px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #16A6C7;
+    margin-top: 30px;
+}
+
+.escudo-aviso {
+    width: 15.2px;
+    height: 15.2px;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+    background: url(../img/escudo1.png) lightgray 50% / cover no-repeat;
+    position: relative;
+    left: 15px;
+    top: 15px;
+}
+
+.texto-aviso {
+    width: 345px; /* Ajustado para 125% */
+    color: #FFF;
+    font-family: Poppins, sans-serif; /* Adicionando uma fallback */
+    font-size: 12px; /* Ajustado para 125% */
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18.77px; /* Ajustado para 125% */    
+    position: relative;
+    left: 45px;
+    bottom: 5px;
+}
+
+.voltar {
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    color: #000;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 19px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    & i {
+        margin-right: 7px;
+    }
+}
+
+.continuar {
+    position: absolute;
+    bottom: 20px;
+    right: 50px;
+    width: 121px;
+    height: 42px;
+    border-radius: 8px;
+    background: #6C1DE9;
+    color: #FFF;
+    text-align: center;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    & p {
+        font-family: Poppins;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 18.8px;
+    }
+    & i {
+        margin-left: 7px;
+    }
+}
+
+/* Fase 2 */
+
+.veiculo { 
+    width: 558px;
+    height: 122px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    border: 3px solid #6C1DE9;
+    background: rgba(217, 217, 217, 0);
+    box-shadow: 0px 4px 18.8px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    & p {
+        color: #000;
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 18.774px; /* Ajustado para 125% de zoom */
+        position: relative;
+        left: 32.8px;
+        top: 19.2px;
+    }
+    & .icon-veiculo {
+        width: 197px;
+        height: 100%;
+        flex-shrink: 0;
+        border-radius: 15px;
+        background: #ECEDF2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & img {
+            width: 64px;
+            height: 64px;
+            flex-shrink: 0;
+            aspect-ratio: 1/1;
+        }
+}
+
+}
+.veiculo:not(:last-child) {
+    margin-bottom: 31px;
+}
+
+.titulo2 {
+    color: #000;
+    font-family: Poppins;
+    font-size: 29px; /* Ajustado para 125% */
+    font-style: normal;
+    font-weight: 600;
+    line-height: 19px; /* Ajustado para 125% */
+    text-align: center;
+    margin-bottom: 58px;
+}
+
+
+/* Fim da fase 2 */
+
+
+
+/* Fim do Main */
+
+/* Footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 80px;
+    & .div-contato {
+        background-color: var(--roxo);
+        padding: 40px 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 100px;
+        width: inherit;
+        & div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 5px;
+            & .footer-title {
+                color: var(--cor-bg-sec);
+                font-weight: 600;
+            }
+            & .footer-text {
+                color: var(--cor-bg-sec);
+                font-weight: 300;
+                font-size: 0.85rem;
+                cursor: pointer;
+                transition: 0.1s;
+                padding: 10px 0;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    & .div-logo {
+        padding: 15px 0;
+        background-color: var(--cor-bg-sec);
+        width: inherit;
+    }
+    & .div-direitos-reservados {
+        padding: 10px 0;
+        width: inherit;
+        background-color: var(--cor-texto);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        & p {
+            color: var(--cor-bg-sec);
+            font-size: 0.85rem;
+        }
+        & .net {
+            color: var(--roxo);
+            font-family: "Racing Sans One", serif;
+
+        }
+        & .cars {
+            color: var(--cor-bg-sec);
+            font-family: "Racing Sans One", serif;
+        }
+    }
+}
+/* Fim do Footer */
