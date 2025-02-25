@@ -68,8 +68,68 @@
         </div>
         
         <div class="container-branco" id="fase-3">
-
+            <p class="titulo2">Preencha os dados do veículo</p>
+            <form action="">
+                <div class="div-input">
+                    <label for="marca">Marca</label>
+                    <select id="marca" name="marca">
+                        <option value=""></option>
+                        <option value="chevrolet">Chevrolet</option>
+                        <option value="ford">Ford</option>
+                        <option value="fiat">Fiat</option>
+                    </select>
+                </div>
+            
+                <div class="div-input">
+                    <label for="modelo">Modelo</label>
+                    <select id="modelo" name="modelo">
+                        <option value=""></option>
+                        <option value="onix">Onix</option>
+                        <option value="fiesta">Fiesta</option>
+                        <option value="uno">Uno</option>
+                    </select>
+                </div>
+        
+                <div class="ano-container">
+                    <div class="div-input">
+                        <label for="ano-modelo">Ano do modelo</label>
+                        <input id="ano-modelo" name="ano-modelo" type="number" placeholder="" />
+                    </div>
+                
+                    <div class="div-input">
+                        <label for="ano-fabricacao">Ano de fabricação</label>
+                        <input id="ano-fabricacao" name="ano-fabricacao" type="number" placeholder="" />
+                    </div>
+                </div>
+        
+                <div class="div-input">
+                    <label for="versao">Versão</label>
+                    <input id="versao" name="versao" type="text" placeholder="" />
+                </div>
+        
+                <div class="cor-renavam-container">
+                    <div class="div-input">
+                        <label for="cor">Cor</label>
+                        <input id="cor" name="cor" type="text" placeholder="" />
+                    </div>
+                
+                    <div class="div-input">
+                        <label for="renavam">Renavam</label>
+                        <input id="renavam" name="renavam" type="text" placeholder="" />
+                    </div>
+                </div>
+            </form>
+            
+            <button class="voltar">
+                <i class="fa-solid fa-arrow-left"></i>Voltar
+            </button>
+            <div class="continuar">
+                <p>Continuar</p>
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
         </div>
+        
+        
     </main>
 
     <footer id="footer">
@@ -99,6 +159,27 @@
             <p>© 2025 <span class="net">NET<span class="cars">CARS</span></span> S.A. Todos os direitos reservados.</p>
         </div>
     </footer>
+    <script>
+            document.addEventListener("DOMContentLoaded", function () {
+        const inputs = document.querySelectorAll(".div-input select, .div-input input");
+
+        inputs.forEach((input) => {
+            input.addEventListener("change", function () {
+                if (this.value) {
+                    this.previousElementSibling.classList.add("active");
+                } else {
+                    this.previousElementSibling.classList.remove("active");
+                }
+            });
+
+            // Para manter o estado correto ao recarregar a página
+            if (input.value) {
+                input.previousElementSibling.classList.add("active");
+            }
+        });
+    });
+
+    </script>
 
 </body>
 

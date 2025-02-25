@@ -331,7 +331,91 @@ main {
 
 /* Fim da fase 2 */
 
+/* Fase 3 */
 
+.container-branco {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.div-input {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    & label {
+        font-size: 0.85rem;
+        color: var(--cor-texto-apagado);
+        font-weight: 600;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 16px;
+        background: var(--cor-bg-sec);
+        width: fit-content;
+        transition: 0.3s;
+        z-index: 1;
+        padding: 0 4px;
+        pointer-events: none;
+    }
+
+    & label.active,
+    &:focus-within label {
+        color: var(--roxo);
+        top: 0;
+        font-size: 0.75rem;
+        z-index: 3;
+    }
+
+    & select, 
+    & input {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.9rem;
+        border: 2px #e0e1e4 solid;
+        border-radius: 8px;
+        outline: none;
+        transition: 0.3s;
+        background: transparent;
+        z-index: 2;
+        appearance: none;
+        cursor: pointer;
+    }
+
+    & select:focus, 
+    & input:focus {
+        border: 2px var(--roxo) solid;
+    }
+}
+
+.ano-container, .cor-renavam-container {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    & .div-input {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-width: 200px;
+    }
+}
+
+#marca, #modelo, #versao {
+    width: 100%;
+    max-width: 600px;
+}
+
+
+/* Fim da fase 3 */
 
 /* Fim do Main */
 
