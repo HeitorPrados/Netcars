@@ -26,16 +26,16 @@
             <h1 class="title">Crie uma conta com seu email</h1>
             <a class="fechar" href="index.html">&times;</a>
             <div class="div-input">
-                <label class="text" for="input">Nome completo</label>
-                <input class="input" name="input" type="text" placeholder="Digite seu nome e sobrenome"/>
+                <label for="input">Nome completo</label>
+                <input class="input" name="input" type="text"/>
             </div>
             <div class="div-input">
-                <label class="text" for="input">Email</label>
-                <input class="input" name="input" type="text" placeholder="Digite seu email"/>
+                <label for="input">Email</label>
+                <input class="input" name="input" type="text"/>
             </div>
             <div class="div-input">
-                <label class="text" for="input">Senha</label>
-                <input class="input" name="input" type="password" placeholder="Digite sua senha"/>
+                <label for="input">Senha</label>
+                <input class="input" name="input" type="password"/>
             </div>
             <button class="btn-acao">Criar conta</button>
         </div>
@@ -69,5 +69,20 @@
             <p>© 2025 <span class="net">NET<span class="cars">CARS</span></span> S.A. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        document.querySelectorAll('.div-input').forEach(container => {
+            const input = container.querySelector('input');
+            const label = container.querySelector('label');
+
+            input.addEventListener('input', function() {
+                if (this.value.trim() !== "") {
+                    label.classList.add('active');
+                } else {
+                    label.classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
